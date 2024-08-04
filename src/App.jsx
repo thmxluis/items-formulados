@@ -29,7 +29,11 @@ const App = () => {
   };
 
   const addConditionToFormula = (condition) => {
-    const conditionString = `IF (${condition.if.join(' ')}) THEN (${condition.then.join(' ')}) ELSE (${condition.else.join(' ')})`;
+    const ifPart = condition.if.join(' ');
+    const thenPart = condition.then.join(' ');
+    const elsePart = condition.else.join(' ');
+
+    const conditionString = `(${ifPart}) if ${thenPart} else ${elsePart}`;
     setFormula([...formula, conditionString]);
   };
 
