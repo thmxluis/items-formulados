@@ -4,6 +4,7 @@ import { useDrop, useDrag } from 'react-dnd';
 const ItemTypes = {
   VARIABLE: 'variable',
   OPERATOR: 'operator',
+  CUSTOM_VALUE: 'customValue',
   FORMULA_ITEM: 'formulaItem',
 };
 
@@ -17,9 +18,9 @@ const FormulaEditor = ({ formula, setFormula }) => {
   };
 
   const [, drop] = useDrop({
-    accept: [ItemTypes.VARIABLE, ItemTypes.OPERATOR, ItemTypes.FORMULA_ITEM],
+    accept: [ItemTypes.VARIABLE, ItemTypes.OPERATOR, ItemTypes.CUSTOM_VALUE, ItemTypes.FORMULA_ITEM],
     drop: (item, monitor) => {
-      if (monitor.getItemType() === ItemTypes.VARIABLE || monitor.getItemType() === ItemTypes.OPERATOR) {
+      if (monitor.getItemType() === ItemTypes.VARIABLE || monitor.getItemType() === ItemTypes.OPERATOR || monitor.getItemType() === ItemTypes.CUSTOM_VALUE) {
         setFormula([...formula, item.name]);
       }
     },

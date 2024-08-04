@@ -4,6 +4,7 @@ import { useDrop, useDrag } from 'react-dnd';
 const ItemTypes = {
   VARIABLE: 'variable',
   OPERATOR: 'operator',
+  CUSTOM_VALUE: 'customValue',
   FORMULA_ITEM: 'formulaItem',
 };
 
@@ -67,7 +68,7 @@ const IfConditionEditor = ({ addConditionToFormula }) => {
 
 const DropArea = ({ items, onDrop, moveItem }) => {
   const [, drop] = useDrop({
-    accept: [ItemTypes.VARIABLE, ItemTypes.OPERATOR],
+    accept: [ItemTypes.VARIABLE, ItemTypes.OPERATOR, ItemTypes.CUSTOM_VALUE],
     drop: (item) => onDrop(item),
   });
 
