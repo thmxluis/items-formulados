@@ -34,11 +34,19 @@ const IfConditionEditor = ({ addConditionToFormula }) => {
     }));
   };
 
+  const handleReset = () => {
+    setCondition({
+      if: [],
+      then: [],
+      else: [],
+    });
+  };
+
   return (
     <div className="if-condition-editor">
-      <h3>If Condition Builder</h3>
+      <h4>If Condition</h4>
       <div className="if-section">
-        <h4>IF</h4>
+        <span>IF</span>
         <DropArea
           items={condition.if}
           onDrop={(item) => handleDrop('if', item)}
@@ -46,7 +54,7 @@ const IfConditionEditor = ({ addConditionToFormula }) => {
         />
       </div>
       <div className="then-section">
-        <h4>THEN</h4>
+        <span>THEN</span>
         <DropArea
           items={condition.then}
           onDrop={(item) => handleDrop('then', item)}
@@ -54,14 +62,17 @@ const IfConditionEditor = ({ addConditionToFormula }) => {
         />
       </div>
       <div className="else-section">
-        <h4>ELSE</h4>
+        <span>ELSE</span>
         <DropArea
           items={condition.else}
           onDrop={(item) => handleDrop('else', item)}
           moveItem={(dragIndex, hoverIndex) => moveItem('else', dragIndex, hoverIndex)}
         />
       </div>
-      <button onClick={() => addConditionToFormula(condition)}>Add Condition to Formula</button>
+      <div className="buttons">
+        <button onClick={() => addConditionToFormula(condition)}>Add</button>
+        <button onClick={handleReset}>Reset</button>
+      </div>
     </div>
   );
 };

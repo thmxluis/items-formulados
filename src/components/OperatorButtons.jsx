@@ -5,7 +5,7 @@ const ItemTypes = {
   OPERATOR: 'operator',
 };
 
-const operators = ['+', '-', '*', '/', 'AND', 'OR', 'NOT', '(', ')'];
+const operators = ['+', '-', '*', '/', 'AND', 'OR', 'NOT', '(', ')', '>', '>=', '<', '<='];
 
 const OperatorButtons = ({ onOperatorSelect }) => {
   return (
