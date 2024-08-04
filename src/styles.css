@@ -1,0 +1,64 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.variable-list, .operator-buttons, .custom-value-input {
+  margin: 10px;
+}
+
+.variable-item, .operator-button, .add-button, .delete-button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.formula-editor {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-height: 50px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.formula-item {
+  margin: 5px;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+.result-output {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.custom-value-input input {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background: #ffdddd;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.delete-button.hover {
+  background: #ff8888;
+}
