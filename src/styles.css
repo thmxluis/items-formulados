@@ -8,10 +8,10 @@
 .panel {
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap; /* Asegura que los componentes estén en una sola fila */
+  flex-wrap: nowrap;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 1000px; /* Ajusta según sea necesario */
+  max-width: 1000px;
 }
 
 .variable-list, .operator-buttons, .custom-value-input, .if-condition-editor {
