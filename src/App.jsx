@@ -5,6 +5,7 @@ import OperatorButtons from './components/OperatorButtons';
 import CustomValueInput from './components/CustomValueInput';
 import DeleteButton from './components/DeleteButton';
 import ResultOutput from './components/ResultOutput';
+import IfConditionEditor from './components/IfConditionEditor';
 import './styles.css';
 
 const App = () => {
@@ -27,6 +28,11 @@ const App = () => {
     setFormula(newFormula);
   };
 
+  const addConditionToFormula = (condition) => {
+    const conditionString = `IF (${condition.if.join(' ')}) THEN (${condition.then.join(' ')}) ELSE (${condition.else.join(' ')})`;
+    setFormula([...formula, conditionString]);
+  };
+
   return (
     <div className="app">
       <h1>Formula Builder</h1>
@@ -34,6 +40,7 @@ const App = () => {
         <VariableList onVariableSelect={handleVariableSelect} />
         <OperatorButtons onOperatorSelect={handleOperatorSelect} />
         <CustomValueInput onCustomValueAdd={handleCustomValueAdd} />
+        <IfConditionEditor addConditionToFormula={addConditionToFormula} />
       </div>
       <FormulaEditor formula={formula} setFormula={setFormula} />
       <DeleteButton onDelete={handleDelete} />

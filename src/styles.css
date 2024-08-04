@@ -8,11 +8,12 @@
 .panel {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap; /* Permite que los componentes se ajusten en múltiples líneas */
   margin-bottom: 20px;
   width: 100%;
 }
 
-.variable-list, .operator-buttons, .custom-value-input {
+.variable-list, .operator-buttons, .custom-value-input, .if-condition-editor {
   margin: 10px;
 }
 
@@ -23,6 +24,7 @@
   cursor: pointer;
 }
 
+/* Estilos específicos para .formula-editor */
 .formula-editor {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +36,41 @@
   max-width: 600px;
 }
 
-.formula-item {
+.formula-editor .formula-item {
+  margin: 5px;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Estilos específicos para .if-condition-editor */
+.if-condition-editor {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-height: 50px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.if-condition-editor .if-section,
+.if-condition-editor .then-section,
+.if-condition-editor .else-section {
+  margin-bottom: 10px;
+}
+
+.if-condition-editor .drop-area {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 50px;
+  border: 1px dashed #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.if-condition-editor .formula-item {
   margin: 5px;
   padding: 5px 10px;
   background: #f0f0f0;
